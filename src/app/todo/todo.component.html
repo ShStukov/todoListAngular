@@ -1,0 +1,23 @@
+<div class="main">
+    <h1>{{todoTitle}}</h1>
+    <mat-form-field>
+        <mat-label>Название</mat-label>
+        <input class="autocomplete: off" matInput type="text" #taskName />
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+        <mat-label>Описание задачи</mat-label>
+        <textarea matInput #taskDescription></textarea>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Выберите дату</mat-label>
+        <input matInput [matDatepicker]="picker" #taskDate>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <br>
+    <button (click)="addItem(taskName.value, taskDescription.value, taskDate.value)">Добавить</button>
+    <app-todo-table></app-todo-table>
+</div>
