@@ -32,6 +32,5 @@ export class TodoComponent {
     } else {
       alert('Введите данные');
     }
-
   }
 }
