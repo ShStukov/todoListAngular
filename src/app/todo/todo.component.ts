@@ -29,7 +29,9 @@ export class TodoComponent {
       };
       this.todoTable.dataSource = [...this.todoTable.dataSource, newItem];
       this.todoTable.table.renderRows();
+    } else {
+      alert('Введите данные');
     }
-    alert('Введите данные');
+
   }
 }
